@@ -19,8 +19,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore ./src/ThrowGuard.sln
+      run: dotnet restore ./ThrowGuard.sln
     - name: Build
-      run: dotnet build ./src/ThrowGuard.sln -c Release --no-restore
+      run: dotnet build ./ThrowGuard.sln -c Release --no-restore
     - name: Test
-      run: dotnet test ./src/ThrowGuard.sln -c Release --no-build --verbosity normal
+      run: dotnet test ./ThrowGuard.sln -c Release --no-build --verbosity normal
