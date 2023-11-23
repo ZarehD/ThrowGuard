@@ -18,7 +18,7 @@ dotnet add package ThrowGuard
 ### Throw Helpers
 
 ```C#
-using Throw;
+using ThrowGuard;
 
 // throw ApplicationException...
 Throw.AppException();
@@ -43,7 +43,7 @@ new CustomException("Parameter contains bad content.").Throw();
 The following is a sampling of the available guard methods.
 
 ```C#
-using Throw;
+using ThrowGuard;
 
 namespace GuardsSamples
 
