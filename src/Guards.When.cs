@@ -28,20 +28,41 @@ namespace ThrowGuard
 		}
 
 		/// <summary>
+		///		Throws an instance of <see cref="ArgumentNullException"/> 
+		///		if <paramref name="condition"/> is true.
+		/// </summary>
+		/// <param name="condition">Condition that must be true for the exception to be thrown.</param>
+		/// <param name="msg">The message to use for the exception.</param>
+		/// <param name="argName">The name of the variable or argument in error.</param>
+		/// <exception cref="ArgumentNullException" />
+		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void ArgNullWhen(
+			Func<bool> condition, string? msg = default, string? argName = default)
+		{
+			if (condition.Invoke())
+			{
+				NullArg(
+					argName ?? SR.Msg_NoArgName,
+					msg ?? $"{SR.Msg_PredicateIsTrue} {SR.Err_NullArg}");
+			}
+		}
+
+		/// <summary>
 		///		Throws an instance of <see cref="ArgumentException"/> 
 		///		if <paramref name="condition"/> is true.
 		/// </summary>
 		/// <param name="condition">Condition that must be true for the exception to be thrown.</param>
 		/// <param name="msg">The message to use for the exception.</param>
+		/// <param name="argName">The name of the variable or argument in error.</param>
 		/// <exception cref="ArgumentException" />
 		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void BadArgWhen(
-			Func<bool> condition, string? msg = default)
+			Func<bool> condition, string? msg = default, string? argName = default)
 		{
 			if (condition.Invoke())
 			{
 				BadArg(
-					string.Empty,
+					argName ?? SR.Msg_NoArgName,
 					msg ?? $"{SR.Msg_PredicateIsTrue} {SR.Err_BadArg}");
 			}
 		}
@@ -52,15 +73,17 @@ namespace ThrowGuard
 		/// </summary>
 		/// <param name="condition">Condition that must be true for the exception to be thrown.</param>
 		/// <param name="msg">The message to use for the exception.</param>
+		/// <param name="path">The folder path.</param>
 		/// <exception cref="DirectoryNotFoundException" />
 		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void DirectoryNotFoundWhen(
-			Func<bool> condition, string? msg = default)
+			Func<bool> condition, string? msg = default, string? path = default)
 		{
 			if (condition.Invoke())
 			{
 				DirectoryNotFound(
-					msg ?? $"{SR.Msg_PredicateIsTrue} {SR.Err_Directory_NotFound}");
+					msg ?? $"{SR.Msg_PredicateIsTrue} {SR.Err_Directory_NotFound}" +
+					(path is null ? null : $" ({path})."));
 			}
 		}
 
@@ -70,15 +93,16 @@ namespace ThrowGuard
 		/// </summary>
 		/// <param name="condition">Condition that must be true for the exception to be thrown.</param>
 		/// <param name="msg">The message to use for the exception.</param>
+		/// <param name="pathName">The file pathname.</param>
 		/// <exception cref="FileNotFoundException" />
 		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void FileNotFoundWhen(
-			Func<bool> condition, string? msg = default)
+			Func<bool> condition, string? msg = default, string? pathName = default)
 		{
 			if (condition.Invoke())
 			{
 				FileNotFound(
-					string.Empty,
+					pathName,
 					msg ?? $"{SR.Msg_PredicateIsTrue} {SR.Err_File_NotFound}");
 			}
 		}

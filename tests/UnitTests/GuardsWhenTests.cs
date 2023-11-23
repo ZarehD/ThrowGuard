@@ -30,6 +30,35 @@
 		//--
 
 		[TestMethod]
+		public void ArgNullWhen_False_Shd_NotThrow()
+		{
+			var con = false;
+
+			var action = () => Throw.ArgNullWhen(() => con);
+
+			action.Should().NotThrow();
+		}
+
+		[TestMethod]
+		public void ArgNullWhen_True_Shd_Throw()
+		{
+			var con = true;
+			var msg = "error message";
+			var arg = "arg-name";
+
+			var action = () => Throw.ArgNullWhen(() => con, msg, arg);
+
+			action.Should()
+				.ThrowExactly<ArgumentNullException>()
+				.WithMessage($"{msg}*")
+				.And.ParamName.Should()
+				.BeEquivalentTo(arg)
+				;
+		}
+
+		//--
+
+		[TestMethod]
 		public void BadArgWhen_False_Shd_NotThrow()
 		{
 			var con = false;
@@ -44,12 +73,15 @@
 		{
 			var con = true;
 			var msg = "error message";
+			var arg = "arg-name";
 
-			var action = () => Throw.BadArgWhen(() => con, msg);
+			var action = () => Throw.BadArgWhen(() => con, msg, arg);
 
 			action.Should()
 				.ThrowExactly<ArgumentException>()
 				.WithMessage($"{msg}*")
+				.And.ParamName.Should()
+				.BeEquivalentTo(arg)
 				;
 		}
 
@@ -66,10 +98,27 @@
 		}
 
 		[TestMethod]
-		public void DirectoryNotFoundWhen_True_Shd_Throw()
+		public void DirectoryNotFoundWhen_True_Shd_Throw_wo_Path()
 		{
 			var con = true;
 			var msg = "error message";
+
+
+			var action = () => Throw.DirectoryNotFoundWhen(() => con, msg);
+
+			action.Should()
+				.ThrowExactly<DirectoryNotFoundException>()
+				.WithMessage($"{msg}*")
+				;
+		}
+
+		[TestMethod]
+		public void DirectoryNotFoundWhen_True_Shd_Throw_w_Path()
+		{
+			var con = true;
+			var pth = @"\\path\to\folder";
+			var msg = $"error message. ({pth}).";
+
 
 			var action = () => Throw.DirectoryNotFoundWhen(() => con, msg);
 
@@ -92,7 +141,7 @@
 		}
 
 		[TestMethod]
-		public void FileNotFoundWhen_True_Shd_Throw()
+		public void FileNotFoundWhen_True_Shd_Throw_wo_Pathname()
 		{
 			var con = true;
 			var msg = "error message";
@@ -102,6 +151,23 @@
 			action.Should()
 				.ThrowExactly<FileNotFoundException>()
 				.WithMessage($"{msg}*")
+				;
+		}
+
+		[TestMethod]
+		public void FileNotFoundWhen_True_Shd_Throw_w_Pathname()
+		{
+			var con = true;
+			var pth = @"\\path\to\file";
+			var msg = "error message";
+
+			var action = () => Throw.FileNotFoundWhen(() => con, msg, pth);
+
+			action.Should()
+				.ThrowExactly<FileNotFoundException>()
+				.WithMessage($"{msg}*")
+				.And.FileName.Should()
+				.BeEquivalentTo(pth)
 				;
 		}
 
