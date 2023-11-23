@@ -56,6 +56,58 @@
 		//--
 
 		[TestMethod]
+		public void DirectoryNotFoundWhen_False_Shd_NotThrow()
+		{
+			var con = false;
+
+			var action = () => Throw.DirectoryNotFoundWhen(() => con);
+
+			action.Should().NotThrow();
+		}
+
+		[TestMethod]
+		public void DirectoryNotFoundWhen_True_Shd_Throw()
+		{
+			var con = true;
+			var msg = "error message";
+
+			var action = () => Throw.DirectoryNotFoundWhen(() => con, msg);
+
+			action.Should()
+				.ThrowExactly<DirectoryNotFoundException>()
+				.WithMessage($"{msg}*")
+				;
+		}
+
+		//--
+
+		[TestMethod]
+		public void FileNotFoundWhen_False_Shd_NotThrow()
+		{
+			var con = false;
+
+			var action = () => Throw.FileNotFoundWhen(() => con);
+
+			action.Should().NotThrow();
+		}
+
+		[TestMethod]
+		public void FileNotFoundWhen_True_Shd_Throw()
+		{
+			var con = true;
+			var msg = "error message";
+
+			var action = () => Throw.FileNotFoundWhen(() => con, msg);
+
+			action.Should()
+				.ThrowExactly<FileNotFoundException>()
+				.WithMessage($"{msg}*")
+				;
+		}
+
+		//--
+
+		[TestMethod]
 		public void InvalidCastWhen_False_Shd_NotThrow()
 		{
 			var con = false;

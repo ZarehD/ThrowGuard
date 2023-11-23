@@ -47,6 +47,43 @@ namespace ThrowGuard
 		}
 
 		/// <summary>
+		///		Throws an instance of <see cref="DirectoryNotFoundException"/> 
+		///		if <paramref name="condition"/> is true.
+		/// </summary>
+		/// <param name="condition">Condition that must be true for the exception to be thrown.</param>
+		/// <param name="msg">The message to use for the exception.</param>
+		/// <exception cref="DirectoryNotFoundException" />
+		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void DirectoryNotFoundWhen(
+			Func<bool> condition, string? msg = default)
+		{
+			if (condition.Invoke())
+			{
+				DirectoryNotFound(
+					msg ?? $"{SR.Msg_PredicateIsTrue} {SR.Err_Directory_NotFound}");
+			}
+		}
+
+		/// <summary>
+		///		Throws an instance of <see cref="FileNotFoundException"/> 
+		///		if <paramref name="condition"/> is true.
+		/// </summary>
+		/// <param name="condition">Condition that must be true for the exception to be thrown.</param>
+		/// <param name="msg">The message to use for the exception.</param>
+		/// <exception cref="FileNotFoundException" />
+		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void FileNotFoundWhen(
+			Func<bool> condition, string? msg = default)
+		{
+			if (condition.Invoke())
+			{
+				FileNotFound(
+					string.Empty,
+					msg ?? $"{SR.Msg_PredicateIsTrue} {SR.Err_File_NotFound}");
+			}
+		}
+
+		/// <summary>
 		///		Throws an instance of <see cref="InvalidCastException"/> 
 		///		if <paramref name="condition"/> is true.
 		/// </summary>
