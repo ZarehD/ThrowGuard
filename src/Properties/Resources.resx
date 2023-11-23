@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Err_AppException" xml:space="preserve">
+    <value>An application error occurred.</value>
+  </data>
+  <data name="Err_BadArg" xml:space="preserve">
+    <value>The argument is not valid.</value>
+  </data>
+  <data name="Err_Char_Whitespace" xml:space="preserve">
+    <value>The value represents a whitespace character.</value>
+  </data>
+  <data name="Err_Collection_Count_Is" xml:space="preserve">
+    <value>The collection contains {0} element(s).</value>
+    <comment>0: count</comment>
+  </data>
+  <data name="Err_Collection_Count_IsNot" xml:space="preserve">
+    <value>The collection contains {0} element(s); expected exactly {1}.</value>
+    <comment>0: actual-count, expected-count</comment>
+  </data>
+  <data name="Err_Collection_Count_LessThan" xml:space="preserve">
+    <value>The collection contains {0} element(s); expected less than {1}.</value>
+    <comment>0: actual-count, expected-count</comment>
+  </data>
+  <data name="Err_Collection_Count_LessThanOrEqualTo" xml:space="preserve">
+    <value>The collection contains {0} element(s); expected less than or equal to {1}.</value>
+    <comment>0: actual-count, expected-count</comment>
+  </data>
+  <data name="Err_Collection_Count_MoreThan" xml:space="preserve">
+    <value>The collection contains {0} element(s); expected more than {1}.</value>
+    <comment>0: actual-count, expected-count</comment>
+  </data>
+  <data name="Err_Collection_Count_MoreThanOrEqualTo" xml:space="preserve">
+    <value>The collection contains {0} element(s); expected more than or equal to {1}.</value>
+    <comment>0: actual-count, expected-count</comment>
+  </data>
+  <data name="Err_Collection_IsEmpty" xml:space="preserve">
+    <value>The collection contains no elements; it is empty.</value>
+  </data>
+  <data name="Err_Collection_Item_Any" xml:space="preserve">
+    <value>One or more elements in the collection match the specified predicate expression.</value>
+  </data>
+  <data name="Err_Collection_Item_AnyNot" xml:space="preserve">
+    <value>One or more elements in the collection do not match the specified predicate expression.</value>
+  </data>
+  <data name="Err_Collection_Item_NullOrEmpty" xml:space="preserve">
+    <value>One or more elements in the collection are a null or empty string.</value>
+  </data>
+  <data name="Err_Collection_Item_NullOrWhitespace" xml:space="preserve">
+    <value>One or more elements in the collection are a null string or contain only whitespace.</value>
+  </data>
+  <data name="Err_Directory_NotFound" xml:space="preserve">
+    <value>The specified directory does not exist.</value>
+  </data>
+  <data name="Err_Directory_NotFound_Path" xml:space="preserve">
+    <value>The specified directory does not exist: '{0}'.</value>
+    <comment>0: folder-path</comment>
+  </data>
+  <data name="Err_Enum_NotMember" xml:space="preserve">
+    <value>The value is not a member of the enumerated type.</value>
+  </data>
+  <data name="Err_Enum_NotMember_Fmt" xml:space="preserve">
+    <value>'{0}' is not a member of enum type {1}.</value>
+    <comment>0: value, 1: enum-type-name</comment>
+  </data>
+  <data name="Err_Exception" xml:space="preserve">
+    <value>An unspecified error occurred.</value>
+  </data>
+  <data name="Err_File_NotFound" xml:space="preserve">
+    <value>The specified file does not exist.</value>
+  </data>
+  <data name="Err_File_NotFound_Path" xml:space="preserve">
+    <value>The specified file does not exist: '{0}'.</value>
+    <comment>0: file-pathname</comment>
+  </data>
+  <data name="Err_GuidEmpty" xml:space="preserve">
+    <value>The value is an empty GUID (Guid.Empty).</value>
+  </data>
+  <data name="Err_InvalidCast" xml:space="preserve">
+    <value>The specified cast is not valid.</value>
+  </data>
+  <data name="Err_InvalidOp" xml:space="preserve">
+    <value>The operation is not valid.</value>
+  </data>
+  <data name="Err_NotImplemented" xml:space="preserve">
+    <value>Not implemented.</value>
+  </data>
+  <data name="Err_NullArg" xml:space="preserve">
+    <value>The argument contains a null reference.</value>
+  </data>
+  <data name="Err_Num_Between" xml:space="preserve">
+    <value>The value {0} is betwwen {1} and {2}, inclusive.</value>
+    <comment>0: value, 1: min, 2: max</comment>
+  </data>
+  <data name="Err_Num_EqualTo" xml:space="preserve">
+    <value>The value is equal to the specified other value ({0}).</value>
+    <comment>0: either value or other-value</comment>
+  </data>
+  <data name="Err_Num_GreaterThan" xml:space="preserve">
+    <value>The value {0} is greater than {1}.</value>
+    <comment>0: value, 1: limit</comment>
+  </data>
+  <data name="Err_Num_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>The value {0} is greater than or equal to {1}.</value>
+    <comment>0: value, 1: limit</comment>
+  </data>
+  <data name="Err_Num_LessThan" xml:space="preserve">
+    <value>The value {0} is less than {1}.</value>
+    <comment>0: value, 1: limit</comment>
+  </data>
+  <data name="Err_Num_LessThanOrEqualTo" xml:space="preserve">
+    <value>The value {0} is less than or equal to {1}.</value>
+    <comment>0: value, 1: limit</comment>
+  </data>
+  <data name="Err_Num_Negative" xml:space="preserve">
+    <value>The value {0} is a negative number.</value>
+    <comment>0: value</comment>
+  </data>
+  <data name="Err_Num_NotBetween" xml:space="preserve">
+    <value>The value {0} is not betwwen {1} and {2}, inclusive.</value>
+    <comment>0: value, 1: min, 2: max</comment>
+  </data>
+  <data name="Err_Num_NotEqualTo" xml:space="preserve">
+    <value>The value {0} is not equal to the specified other value ({1}).</value>
+    <comment>0: value, 1: other-value</comment>
+  </data>
+  <data name="Err_Num_NotNegative" xml:space="preserve">
+    <value>The value {0} is not a negative number.</value>
+    <comment>0: value</comment>
+  </data>
+  <data name="Err_Num_NotPositive" xml:space="preserve">
+    <value>The value {0} is not a positive number.</value>
+    <comment>0: value</comment>
+  </data>
+  <data name="Err_Num_NotZero" xml:space="preserve">
+    <value>The value is not zero.</value>
+  </data>
+  <data name="Err_Num_Positive" xml:space="preserve">
+    <value>The value {0} is a positive number.</value>
+    <comment>0: value</comment>
+  </data>
+  <data name="Err_Num_Zero" xml:space="preserve">
+    <value>The value is zero.</value>
+  </data>
+  <data name="Err_OutOfRange" xml:space="preserve">
+    <value>The value is out of range.</value>
+  </data>
+  <data name="Err_OutOfRange_Fmt" xml:space="preserve">
+    <value>The value ({0}) is out of range; value must be between {1} and {2}.</value>
+    <comment>0: value, 1: min, 2: max</comment>
+  </data>
+  <data name="Err_Str_Empty" xml:space="preserve">
+    <value>The string value is empty.</value>
+  </data>
+  <data name="Err_Str_NullOrEmpty" xml:space="preserve">
+    <value>The string value contains a null reference or is an empty string.</value>
+  </data>
+  <data name="Err_Str_NullOrWhitespace" xml:space="preserve">
+    <value>The string value contains a null reference, is an empty string, or contains only whitespace.</value>
+  </data>
+  <data name="Err_Str_Whitespace" xml:space="preserve">
+    <value>The string value is empty or contains only whitespace.</value>
+  </data>
+  <data name="Err_Uri_DateTimeKindIs" xml:space="preserve">
+    <value>The DateTimeKind is {0}.</value>
+    <comment>0: date-time-kind</comment>
+  </data>
+  <data name="Err_Uri_DateTimeKindIsNot" xml:space="preserve">
+    <value>The DateTimeKind is not {0}.</value>
+    <comment>0: date-time-kind</comment>
+  </data>
+  <data name="Err_Uri_HostIs" xml:space="preserve">
+    <value>The Uri host is '{0}'.</value>
+    <comment>0: host-name</comment>
+  </data>
+  <data name="Err_Uri_HostIsNot" xml:space="preserve">
+    <value>The Uri host is not '{0}'.</value>
+    <comment>0: host-name</comment>
+  </data>
+  <data name="Err_Uri_HostNameTypeIs" xml:space="preserve">
+    <value>The Uri host-name-type is {0}.</value>
+    <comment>0: host-name-type</comment>
+  </data>
+  <data name="Err_Uri_HostNameTypeIsNot" xml:space="preserve">
+    <value>The Uri host-name-type is not {0}.</value>
+    <comment>0: host-name-type</comment>
+  </data>
+  <data name="Err_Uri_IsAbsolute" xml:space="preserve">
+    <value>The Uri instance is Absolute.</value>
+  </data>
+  <data name="Err_Uri_IsBaseOf" xml:space="preserve">
+    <value>Uri '{0}' is a base of '{1}'.</value>
+    <comment>0: uri, 1: other-uri</comment>
+  </data>
+  <data name="Err_Uri_IsFile" xml:space="preserve">
+    <value>The Uri is a File uri.</value>
+  </data>
+  <data name="Err_Uri_IsLoopback" xml:space="preserve">
+    <value>The Uri references the local host.</value>
+  </data>
+  <data name="Err_Uri_IsNotBaseOf" xml:space="preserve">
+    <value>Uri '{0}' is not a base of '{1}'.</value>
+    <comment>0: uri, 1: other-uri</comment>
+  </data>
+  <data name="Err_Uri_IsNotFile" xml:space="preserve">
+    <value>The Uri is not a File uri.</value>
+  </data>
+  <data name="Err_Uri_IsNotLoopback" xml:space="preserve">
+    <value>The Uri does not reference the local host.</value>
+  </data>
+  <data name="Err_Uri_IsNotUnc" xml:space="preserve">
+    <value>The Uri is not a Unc uri.</value>
+  </data>
+  <data name="Err_Uri_IsRelative" xml:space="preserve">
+    <value>The Uri instance is Relative.</value>
+  </data>
+  <data name="Err_Uri_IsUnc" xml:space="preserve">
+    <value>The Uri is a Unc uri.</value>
+  </data>
+  <data name="Err_Uri_PortIs" xml:space="preserve">
+    <value>The Uri port is {0}.</value>
+    <comment>0: port-num</comment>
+  </data>
+  <data name="Err_Uri_PortIsDefault" xml:space="preserve">
+    <value>The Uri uses the default port for the scheme.</value>
+  </data>
+  <data name="Err_Uri_PortIsNot" xml:space="preserve">
+    <value>The Uri port is not {0}.</value>
+    <comment>0: port-num</comment>
+  </data>
+  <data name="Err_Uri_PortIsNotDefault" xml:space="preserve">
+    <value>The Uri does not use the default port for the scheme.</value>
+  </data>
+  <data name="Err_Uri_SchemeIs" xml:space="preserve">
+    <value>The Uri scheme is {0}.</value>
+    <comment>0: scheme</comment>
+  </data>
+  <data name="Err_Uri_SchemeIsNot" xml:space="preserve">
+    <value>The Uri scheme is not {0}.</value>
+    <comment>0: scheme</comment>
+  </data>
+  <data name="Err_ValidationError" xml:space="preserve">
+    <value>A validation error occurred.</value>
+  </data>
+  <data name="Msg_NoArgName" xml:space="preserve">
+    <value>No argument name given.</value>
+  </data>
+  <data name="Msg_PredicateIsTrue" xml:space="preserve">
+    <value>The predicate condition is true.</value>
+  </data>
+</root>

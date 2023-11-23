@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net7.0;net6.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<RepositoryUrl>https://github.com/ZarehD/ThrowGuard</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/ZarehD/ThrowGuard</PackageProjectUrl>
+		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+
+		<AssemblyName>ThrowGuard</AssemblyName>
+		<RootNamespace>ThrowGuard</RootNamespace>
+		<PackageId>ThrowGuard</PackageId>
+		<Title>ThrowGuard</Title>
+		<PackageTags>argument,guard,clause,exception,throw,helper</PackageTags>
+
+		<Authors>Zareh DerGevorkian</Authors>
+		<Company>Zareh DerGevorkian</Company>
+		<PublisherName>Zareh DerGevorkian</PublisherName>
+		<Copyright>Copyright 2023 Zareh DerGevorkian. All rights reserved</Copyright>
+		<Product>ThrowGuard</Product>
+		<Description>Throw helpers and guard methods</Description>
+		<Version>1.0.0</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\Readme.md" Link="Readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+</Project>
