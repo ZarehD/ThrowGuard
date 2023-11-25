@@ -241,11 +241,11 @@
     <comment>0: value, 1: other-value</comment>
   </data>
   <data name="Err_Num_NotNegative" xml:space="preserve">
-    <value>The value {0} is not a negative number.</value>
+    <value>The value {0} is not a negative, non-zero number.</value>
     <comment>0: value</comment>
   </data>
   <data name="Err_Num_NotPositive" xml:space="preserve">
-    <value>The value {0} is not a positive number.</value>
+    <value>The value {0} is not a positive, non-zero number.</value>
     <comment>0: value</comment>
   </data>
   <data name="Err_Num_NotZero" xml:space="preserve">

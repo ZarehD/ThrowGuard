@@ -376,7 +376,7 @@ namespace ThrowGuard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The value {0} is not a negative number..
+        ///   Looks up a localized string similar to The value {0} is not a negative, non-zero number..
         /// </summary>
         internal static string Err_Num_NotNegative {
             get {
@@ -385,7 +385,7 @@ namespace ThrowGuard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The value {0} is not a positive number..
+        ///   Looks up a localized string similar to The value {0} is not a positive, non-zero number..
         /// </summary>
         internal static string Err_Num_NotPositive {
             get {
