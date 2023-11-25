@@ -23,7 +23,7 @@ namespace ThrowGuard
 		/// <param name="message"></param>
 		/// <param name="args"></param>
 		/// <returns></returns>
-		public static string SF(this string? message, params object[] args) =>
+		public static string SF(this string? message, params object?[] args) =>
 			message is null ? string.Empty :
 			string.Format(
 				System.Globalization.CultureInfo.InvariantCulture,
