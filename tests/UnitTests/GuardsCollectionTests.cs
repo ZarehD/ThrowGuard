@@ -1223,7 +1223,7 @@
 		{
 			var arg = new List<string?>() { "one", "two" };
 			var exp = arg;
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 
 			var action = () => ret = Throw.IfAnyElementNullOrEmpty(arg);
 
@@ -1237,7 +1237,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", null };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNullOrEmpty(
@@ -1256,7 +1256,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", null };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNullOrEmpty(arg, msg);
@@ -1276,7 +1276,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", null };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = SR.Err_Collection_Item_NullOrEmpty;
 
 			var action = () => ret = Throw.IfAnyElementNullOrEmpty(arg);
@@ -1297,7 +1297,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", "" };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNullOrEmpty(
@@ -1316,7 +1316,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", "" };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNullOrEmpty(arg, msg);
@@ -1336,7 +1336,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", "" };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = SR.Err_Collection_Item_NullOrEmpty;
 
 			var action = () => ret = Throw.IfAnyElementNullOrEmpty(arg);
@@ -1371,7 +1371,7 @@
 		{
 			var arg = new List<string?>() { "one", "two" };
 			var exp = arg;
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(arg);
 
@@ -1385,7 +1385,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", null };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(
@@ -1404,7 +1404,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", null };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(arg, msg);
@@ -1424,7 +1424,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", null };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = SR.Err_Collection_Item_NullOrWhitespace;
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(arg);
@@ -1445,7 +1445,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", "" };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(
@@ -1464,7 +1464,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", "" };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(arg, msg);
@@ -1484,7 +1484,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", "" };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = SR.Err_Collection_Item_NullOrWhitespace;
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(arg);
@@ -1505,7 +1505,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", " " };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(
@@ -1524,7 +1524,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", " " };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(arg, msg);
@@ -1544,7 +1544,7 @@
 		{
 			var arg = new List<string?>() { "one", "two", " " };
 			var exp = default(List<string?>?);
-			var ret = default(IEnumerable<string?>?);
+			var ret = default(List<string?>?);
 			var msg = SR.Err_Collection_Item_NullOrWhitespace;
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(arg);
