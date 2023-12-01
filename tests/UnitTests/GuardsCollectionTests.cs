@@ -1051,7 +1051,7 @@
 			var exp = arg;
 			var ret = default(IEnumerable<byte>);
 
-			var action = () => ret = Throw.IfAnyElement(arg, GuardsCollectionTests.FuncFalse);
+			var action = () => ret = Throw.IfAnyElement(arg, FuncFalse);
 
 			action.Should().NotThrow();
 			Assert.AreEqual(exp, ret);
@@ -1125,7 +1125,7 @@
 			var exp = default(List<byte>);
 			var ret = default(IEnumerable<byte>);
 
-			var action = () => ret = Throw.IfAnyElementNot(arg!, GuardsCollectionTests.FuncFalse);
+			var action = () => ret = Throw.IfAnyElementNot(arg!, FuncFalse);
 
 			action.Should().ThrowExactly<ArgumentNullException>();
 			Assert.AreEqual(exp, ret);
@@ -1153,7 +1153,7 @@
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNot(
-				arg, GuardsCollectionTests.FuncFalse, ex: argName => new ApplicationException(argName + msg));
+				arg, FuncFalse, ex: argName => new ApplicationException(argName + msg));
 
 			action.Should()
 				.ThrowExactly<ApplicationException>()
@@ -1171,7 +1171,7 @@
 			var ret = default(IEnumerable<byte>);
 			var msg = "Collection count error";
 
-			var action = () => ret = Throw.IfAnyElementNot(arg, GuardsCollectionTests.FuncFalse, msg);
+			var action = () => ret = Throw.IfAnyElementNot(arg, FuncFalse, msg);
 
 			action.Should()
 				.ThrowExactly<ArgumentException>()
@@ -1191,7 +1191,7 @@
 			var ret = default(IEnumerable<byte>);
 			var msg = SR.Err_Collection_Item_AnyNot;
 
-			var action = () => ret = Throw.IfAnyElementNot(arg, GuardsCollectionTests.FuncFalse);
+			var action = () => ret = Throw.IfAnyElementNot(arg, FuncFalse);
 
 			action.Should()
 				.ThrowExactly<ArgumentException>()
@@ -1210,7 +1210,7 @@
 		{
 			var arg = default(List<string>?);
 			var exp = default(List<string>?);
-			var ret = default(IEnumerable<string>?);
+			var ret = default(List<string>?);
 
 			var action = () => ret = Throw.IfAnyElementNullOrEmpty(arg!);
 
@@ -1358,7 +1358,7 @@
 		{
 			var arg = default(List<string>?);
 			var exp = default(List<string>?);
-			var ret = default(IEnumerable<string>?);
+			var ret = default(List<string>?);
 
 			var action = () => ret = Throw.IfAnyElementNullOrWhitespace(arg!);
 
