@@ -355,6 +355,7 @@ namespace ThrowGuard
 		///		Throws an exception if <paramref name="predicate"/> returns true
 		///		for any element in the specified collection.
 		/// </summary>
+		/// <typeparam name="TCollection">The type of the collection.</typeparam>
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="arg">The value or expression to evaluate.</param>
 		/// <param name="predicate">The function to apply to the collection elements.</param>
@@ -368,11 +369,12 @@ namespace ThrowGuard
 		/// <returns>The value specified in <paramref name="arg"/>.</returns>
 		/// <exception cref="ArgumentException">When any element in <paramref name="arg"/> causes the predicate function to return true.</exception>
 		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static IEnumerable<TElement?> IfAnyElement<TElement>(
-			[DisallowNull] IEnumerable<TElement?> arg,
+		public static TCollection IfAnyElement<TCollection, TElement>(
+			[DisallowNull] TCollection arg,
 			Func<TElement?, bool> predicate, string? msg = default,
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
 			Func<string, Exception>? ex = default)
+			where TCollection : IEnumerable<TElement>
 		{
 			_ = IfNull(arg, msg, argName, ex);
 			if (arg.Any(predicate))
@@ -395,6 +397,7 @@ namespace ThrowGuard
 		///		Throws an exception if <paramref name="predicate"/> returns false
 		///		for any element in the specified collection.
 		/// </summary>
+		/// <typeparam name="TCollection">The type of the collection.</typeparam>
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="arg">The value or expression to evaluate.</param>
 		/// <param name="predicate">The function to apply to the collection elements.</param>
@@ -408,11 +411,13 @@ namespace ThrowGuard
 		/// <returns>The value specified in <paramref name="arg"/>.</returns>
 		/// <exception cref="ArgumentException">When any element in <paramref name="arg"/> causes the predicate function to return false.</exception>
 		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static IEnumerable<TElement?> IfAnyElementNot<TElement>(
-			[DisallowNull] IEnumerable<TElement?> arg,
-			Func<TElement?, bool> predicate, string? msg = default,
+		public static TCollection IfAnyElementNot<TCollection, TElement>(
+			[DisallowNull] TCollection arg,
+			Func<TElement?, bool> predicate, 
+			string? msg = default,
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
 			Func<string, Exception>? ex = default)
+			where TCollection : IEnumerable<TElement>
 		{
 			_ = IfNull(arg, msg, argName, ex);
 			if (!arg.Any(predicate))
@@ -452,7 +457,7 @@ namespace ThrowGuard
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
 			Func<string, Exception>? ex = default)
 			where TCollection : IEnumerable<string?> =>
-			(TCollection) IfAnyElement(
+			IfAnyElement<TCollection, string?>(
 				arg, string.IsNullOrEmpty,
 				msg ?? SR.Err_Collection_Item_NullOrEmpty,
 				argName, ex);
@@ -477,7 +482,7 @@ namespace ThrowGuard
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
 			Func<string, Exception>? ex = default)
 			where TCollection : IEnumerable<string?> =>
-			(TCollection) IfAnyElement(
+			IfAnyElement<TCollection, string?>(
 				arg, string.IsNullOrWhiteSpace,
 				msg ?? SR.Err_Collection_Item_NullOrWhitespace,
 				argName, ex);

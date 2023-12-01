@@ -1026,8 +1026,9 @@
 
 		//--
 
-		static bool FuncTrue<T>(T t) => true;
-		static bool FuncFalse<T>(T t) => false;
+		static Func<byte, bool> FuncTrue { get; } = b => true;
+
+		static Func<byte, bool> FuncFalse { get; } = b => false;
 
 		//--
 
@@ -1036,7 +1037,7 @@
 		{
 			var arg = default(List<byte>);
 			var exp = default(List<byte>);
-			var ret = default(IEnumerable<byte>);
+			var ret = default(List<byte>);
 
 			var action = () => ret = Throw.IfAnyElement(arg!, FuncFalse);
 
@@ -1049,7 +1050,7 @@
 		{
 			var arg = new List<byte>() { 1, 2, 3 };
 			var exp = arg;
-			var ret = default(IEnumerable<byte>);
+			var ret = default(List<byte>);
 
 			var action = () => ret = Throw.IfAnyElement(arg, FuncFalse);
 
@@ -1062,7 +1063,7 @@
 		{
 			var arg = new List<byte>() { 1, 2, 3 };
 			var exp = default(List<byte>);
-			var ret = default(IEnumerable<byte>);
+			var ret = default(List<byte>);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElement(
@@ -1081,7 +1082,7 @@
 		{
 			var arg = new List<byte>() { 1, 2, 3 };
 			var exp = default(List<byte>);
-			var ret = default(IEnumerable<byte>);
+			var ret = default(List<byte>);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElement(arg, FuncTrue, msg);
@@ -1101,7 +1102,7 @@
 		{
 			var arg = new List<byte>() { 1, 2, 3 };
 			var exp = default(List<byte>);
-			var ret = default(IEnumerable<byte>);
+			var ret = default(List<byte>);
 			var msg = SR.Err_Collection_Item_Any;
 
 			var action = () => ret = Throw.IfAnyElement(arg, FuncTrue);
@@ -1123,7 +1124,7 @@
 		{
 			var arg = default(List<byte>);
 			var exp = default(List<byte>);
-			var ret = default(IEnumerable<byte>);
+			var ret = default(List<byte>);
 
 			var action = () => ret = Throw.IfAnyElementNot(arg!, FuncFalse);
 
@@ -1136,7 +1137,7 @@
 		{
 			var arg = new List<byte>() { 1, 2, 3 };
 			var exp = arg;
-			var ret = default(IEnumerable<byte>);
+			var ret = default(List<byte>);
 
 			var action = () => ret = Throw.IfAnyElementNot(arg, FuncTrue);
 
@@ -1149,7 +1150,7 @@
 		{
 			var arg = new List<byte>() { 1, 2, 3 };
 			var exp = default(List<byte>);
-			var ret = default(IEnumerable<byte>);
+			var ret = default(List<byte>);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNot(
@@ -1168,7 +1169,7 @@
 		{
 			var arg = new List<byte>() { 1, 2, 3 };
 			var exp = default(List<byte>);
-			var ret = default(IEnumerable<byte>);
+			var ret = default(List<byte>);
 			var msg = "Collection count error";
 
 			var action = () => ret = Throw.IfAnyElementNot(arg, FuncFalse, msg);
@@ -1188,7 +1189,7 @@
 		{
 			var arg = new List<byte>() { 1, 2, 3 };
 			var exp = default(List<byte>);
-			var ret = default(IEnumerable<byte>);
+			var ret = default(List<byte>);
 			var msg = SR.Err_Collection_Item_AnyNot;
 
 			var action = () => ret = Throw.IfAnyElementNot(arg, FuncFalse);
@@ -1221,9 +1222,9 @@
 		[TestMethod]
 		public void IfAnyElementNullOrEmpty_No_Shd_NotThrow()
 		{
-			var arg = new List<string?>() { "one", "two" };
+			var arg = new List<string>() { "one", "two" };
 			var exp = arg;
-			var ret = default(List<string?>?);
+			var ret = default(List<string>?);
 
 			var action = () => ret = Throw.IfAnyElementNullOrEmpty(arg);
 
