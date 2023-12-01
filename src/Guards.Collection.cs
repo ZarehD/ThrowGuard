@@ -447,11 +447,12 @@ namespace ThrowGuard
 		/// <returns>The value specified in <paramref name="arg"/>.</returns>
 		/// <exception cref="ArgumentException">When <paramref name="arg"/> contains an element that is null, empty, or whitespace.</exception>
 		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static IEnumerable<string> IfAnyElementNullOrEmpty(
-			[DisallowNull, NotNull] IEnumerable<string?> arg, string? msg = default,
+		public static TCollection IfAnyElementNullOrEmpty<TCollection>(
+			[DisallowNull, NotNull] TCollection arg, string? msg = default,
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
-			Func<string, Exception>? ex = default) =>
-			(IEnumerable<string>) IfAnyElement(
+			Func<string, Exception>? ex = default)
+			where TCollection : IEnumerable<string?> =>
+			(TCollection) IfAnyElement(
 				arg, string.IsNullOrEmpty,
 				msg ?? SR.Err_Collection_Item_NullOrEmpty,
 				argName, ex);
@@ -471,11 +472,12 @@ namespace ThrowGuard
 		/// <returns>The value specified in <paramref name="arg"/>.</returns>
 		/// <exception cref="ArgumentException">When <paramref name="arg"/> contains an element that is null, empty, or whitespace.</exception>
 		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static IEnumerable<string> IfAnyElementNullOrWhitespace(
-			[DisallowNull, NotNull] IEnumerable<string?> arg, string? msg = default,
+		public static TCollection IfAnyElementNullOrWhitespace<TCollection>(
+			[DisallowNull, NotNull] TCollection arg, string? msg = default,
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
-			Func<string, Exception>? ex = default) =>
-			(IEnumerable<string>) IfAnyElement(
+			Func<string, Exception>? ex = default)
+			where TCollection : IEnumerable<string?> =>
+			(TCollection) IfAnyElement(
 				arg, string.IsNullOrWhiteSpace,
 				msg ?? SR.Err_Collection_Item_NullOrWhitespace,
 				argName, ex);
