@@ -70,6 +70,7 @@ namespace ThrowGuard
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
 			Func<string, Exception>? ex = default)
 		{
+			_ = IfNull(condition);
 			if ((Guid.Empty == arg) && condition.Invoke())
 			{
 				if (ex is null)
@@ -134,6 +135,7 @@ namespace ThrowGuard
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
 			Func<string, Exception>? ex = default)
 		{
+			_ = IfNull(condition);
 			_ = IfNull(arg, condition, msg, argName, ex);
 			_ = IfEmpty(arg ?? Guid.Empty, condition, msg, argName, ex);
 			return arg;

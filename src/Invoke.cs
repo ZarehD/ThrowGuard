@@ -24,7 +24,9 @@ namespace ThrowGuard
 		/// <param name="action">The action to execute.</param>
 		public static void When(Func<bool> condition, Action action)
 		{
-			if (condition.Invoke()) action?.Invoke();
+			Throw.IfNull(condition);
+			Throw.IfNull(action);
+			if (condition.Invoke()) action.Invoke();
 		}
 	}
 }

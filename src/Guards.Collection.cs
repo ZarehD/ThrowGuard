@@ -84,6 +84,7 @@ namespace ThrowGuard
 			Func<string, Exception>? ex = default)
 			where TCollection : IEnumerable
 		{
+			_ = IfNull(condition);
 			_ = IfNull(arg, condition, msg, argName, ex);
 			if ((!arg?.GetEnumerator().MoveNext() ?? true) && condition.Invoke())
 			{
@@ -376,6 +377,7 @@ namespace ThrowGuard
 			Func<string, Exception>? ex = default)
 			where TCollection : IEnumerable<TElement>
 		{
+			_ = IfNull(predicate);
 			_ = IfNull(arg, msg, argName, ex);
 			if (arg.Any(predicate))
 			{
@@ -419,6 +421,7 @@ namespace ThrowGuard
 			Func<string, Exception>? ex = default)
 			where TCollection : IEnumerable<TElement>
 		{
+			_ = IfNull(predicate);
 			_ = IfNull(arg, msg, argName, ex);
 			if (!arg.Any(predicate))
 			{
@@ -495,13 +498,7 @@ namespace ThrowGuard
 			[DisallowNull] this TValue value)
 			where TValue : IEnumerable
 		{
-			static int getEnumeratedCount(IEnumerable enumerable)
-			{
-				IEnumerator enumerator = enumerable.GetEnumerator();
-				int count = 0;
-				while (enumerator.MoveNext()) count++;
-				return count;
-			}
+			_ = IfNull(value);
 
 			return value switch
 			{
@@ -509,6 +506,14 @@ namespace ThrowGuard
 				string s => s.Length,
 				_ => getEnumeratedCount(value)
 			};
+
+			static int getEnumeratedCount(IEnumerable enumerable)
+			{
+				IEnumerator enumerator = enumerable.GetEnumerator();
+				int count = 0;
+				while (enumerator.MoveNext()) count++;
+				return count;
+			}
 		}
 
 		#endregion

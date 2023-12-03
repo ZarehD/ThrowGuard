@@ -24,6 +24,7 @@ namespace ThrowGuard
 		public static void When(
 			Func<bool> predicate, Exception ex)
 		{
+			_ = IfNull(predicate);
 			if (predicate.Invoke()) This(ex);
 		}
 
@@ -39,6 +40,7 @@ namespace ThrowGuard
 		public static void ArgNullWhen(
 			Func<bool> condition, string? msg = default, string? argName = default)
 		{
+			_ = IfNull(condition);
 			if (condition.Invoke())
 			{
 				NullArg(
@@ -59,6 +61,7 @@ namespace ThrowGuard
 		public static void BadArgWhen(
 			Func<bool> condition, string? msg = default, string? argName = default)
 		{
+			_ = IfNull(condition);
 			if (condition.Invoke())
 			{
 				BadArg(
@@ -79,6 +82,7 @@ namespace ThrowGuard
 		public static void DirectoryNotFoundWhen(
 			Func<bool> condition, string? msg = default, string? path = default)
 		{
+			_ = IfNull(condition);
 			if (condition.Invoke())
 			{
 				DirectoryNotFound(
@@ -99,6 +103,7 @@ namespace ThrowGuard
 		public static void FileNotFoundWhen(
 			Func<bool> condition, string? msg = default, string? pathName = default)
 		{
+			_ = IfNull(condition);
 			if (condition.Invoke())
 			{
 				FileNotFound(
@@ -118,6 +123,7 @@ namespace ThrowGuard
 		public static void InvalidCastWhen(
 			Func<bool> condition, string? msg = default)
 		{
+			_ = IfNull(condition);
 			if (condition.Invoke())
 			{
 				InvalidCast(
@@ -136,6 +142,7 @@ namespace ThrowGuard
 		public static void InvalidOpWhen(
 			Func<bool> condition, string? msg = default)
 		{
+			_ = IfNull(condition);
 			if (condition.Invoke())
 			{
 				InvalidOp(
@@ -153,6 +160,7 @@ namespace ThrowGuard
 		public static void ValidationErrorWhen(
 			Func<bool> condition, string? msg = default)
 		{
+			_ = IfNull(condition);
 			if (condition.Invoke())
 			{
 				ValidationError(

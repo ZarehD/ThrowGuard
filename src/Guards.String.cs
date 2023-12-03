@@ -73,6 +73,7 @@ namespace ThrowGuard
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
 			Func<string, Exception>? ex = default)
 		{
+			_ = IfNull(condition);
 			_ = IfNull(arg, condition, msg, argName, ex);
 			if ((arg == string.Empty) && condition.Invoke())
 			{
@@ -151,6 +152,7 @@ namespace ThrowGuard
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
 			Func<string, Exception>? ex = default)
 		{
+			_ = IfNull(condition);
 			_ = IfNull(arg, condition, msg, argName, ex);
 			if (string.IsNullOrWhiteSpace(arg) && condition.Invoke())
 			{
@@ -232,6 +234,7 @@ namespace ThrowGuard
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
 			Func<string, Exception>? ex = default)
 		{
+			_ = IfNull(condition);
 			_ = IfNull(arg, condition, msg, argName, ex);
 			if (((' ' == arg) || ('\t' == arg)) && condition.Invoke())
 			{

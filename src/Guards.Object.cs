@@ -10,6 +10,8 @@ on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expres
 the specific language governing permissions and limitations under the License.
 --------------------------------------------------------------------------------------------------------------------------------*/
 
+using System;
+
 namespace ThrowGuard
 {
 	/// <summary>
@@ -76,6 +78,7 @@ namespace ThrowGuard
 			[CallerArgumentExpression(nameof(arg))] string? argName = default,
 			Func<string, Exception>? ex = default)
 		{
+			_ = IfNull(condition);
 			if ((arg is null) && condition.Invoke())
 			{
 				if (ex is null)
