@@ -1,3 +1,6 @@
+
+<img src="Logo.png" alt="package icon" style="float:left; margin-right:20px" />
+
 # Throw Helpers & Guards
 
 #### A small library of throw helpers and guard methods to optimize and simplify your code.
