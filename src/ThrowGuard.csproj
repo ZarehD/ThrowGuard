@@ -11,10 +11,12 @@
 
 	<PropertyGroup>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<RepositoryUrl>https://github.com/ZarehD/ThrowGuard</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/ZarehD/ThrowGuard</PackageProjectUrl>
+		<PackageIcon>Logo.png</PackageIcon>
 		<PackageReadmeFile>Readme.md</PackageReadmeFile>
 
 		<AssemblyName>ThrowGuard</AssemblyName>
@@ -26,15 +28,11 @@
 		<Authors>Zareh DerGevorkian</Authors>
 		<Company>Zareh DerGevorkian</Company>
 		<PublisherName>Zareh DerGevorkian</PublisherName>
-		<Copyright>Copyright 2023 Zareh DerGevorkian. All rights reserved</Copyright>
 		<Product>ThrowGuard</Product>
+		<Copyright>Copyright 2023 Zareh DerGevorkian. All rights reserved</Copyright>
 		<Description>Throw helpers and guard methods</Description>
-		<Version>1.0.3</Version>
+		<Version>1.0.4</Version>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<None Include="..\Readme.md" Link="Readme.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Update="Properties\Resources.Designer.cs">
@@ -49,6 +47,14 @@
 			<Generator>ResXFileCodeGenerator</Generator>
 			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Logo.png" Link="Logo.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Readme.md" Link="Readme.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>
