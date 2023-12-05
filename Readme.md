@@ -1,4 +1,4 @@
-# ![ThrowGuard Package Icon](./Logo.png) Throw Helpers & Guards
+# Throw Helpers & Guards
 
 #### A small library of throw helpers and guard methods to optimize and simplify your code.
 
