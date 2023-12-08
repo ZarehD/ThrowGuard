@@ -145,7 +145,7 @@ void MyMethod(MyObject myObject, string myString)
 }
 ```
 
-...replace it with these:
+...replace them with these:
 
 ```C#
 void MyMethod(MyObject myObject, string myString)
@@ -164,3 +164,13 @@ void MyMethod(MyObject myObject, string myString)
   ...
 }
 ```
+
+<br/>
+
+## License
+
+[Apache 2.0](https://github.com/ZarehD/ThrowGuard/blob/master/LICENSE)
+
+<br/>
+
+If you like this project, or find it useful, please give it a star. Thank you.
