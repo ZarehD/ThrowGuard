@@ -71,13 +71,13 @@ public class MyClass
 
     Throw.IfNull(
       _repo.NameSanitizer, argName: "Repo Name Sanitizer",
-      ex: new InvalidOperationException(
+      ex: _ => new InvalidOperationException(
         "A valid NameSanitizer is required for this operation."));
 
     Throw.IfNullOrEmpty(
       _repo.NameSanitizer.SafeList, // a collection
       argName: "Repo Sanitizer SafeList"
-      ex: new InvalidOperationException(
+      ex: _ => new InvalidOperationException(
         "Name sanitizer safe-list is empty."));
 
     Throw.InvalidOpWhen(
