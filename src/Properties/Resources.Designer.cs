@@ -277,6 +277,15 @@ namespace ThrowGuard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid Operation: argument contains a null reference (Parameter: {0})..
+        /// </summary>
+        internal static string Err_InvalidOp_NullArg {
+            get {
+                return ResourceManager.GetString("Err_InvalidOp_NullArg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not implemented..
         /// </summary>
         internal static string Err_NotImplemented {

@@ -94,5 +94,32 @@ namespace ThrowGuard
 			}
 			return arg;
 		}
+
+
+		// InvalidOp
+
+		/// <summary>
+		///		Throws an instance of <see cref="InvalidOperationException"/> 
+		///		if <paramref name="arg"/> is null.
+		/// </summary>
+		/// <typeparam name="T">The type of the <paramref name="arg"/> value.</typeparam>
+		/// <param name="arg">The value or expression to evaluate.</param>
+		/// <param name="msg">The message to use for the exception.</param>
+		/// <param name="argName">The name of the evaluated expression in <paramref name="arg"/>.</param>
+		/// <returns>The non-null value specified in <paramref name="arg"/>.</returns>
+		/// <exception cref="InvalidOperationException" />
+		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static T InvalidOpIfNull<T>(
+			[NotNull] T? arg, string? msg = default,
+			[CallerArgumentExpression(nameof(arg))] string? argName = default)
+		{
+			if (arg is null)
+			{
+				InvalidOp(
+					msg ?? SR.Err_InvalidOp_NullArg.SF(argName ?? SR.Msg_NoArgName));
+			}
+			return arg;
+		}
+
 	}
 }

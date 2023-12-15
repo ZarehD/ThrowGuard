@@ -20,7 +20,7 @@
 		}
 
 		[TestMethod]
-		public void IfTypeEquals_NotEqual_Shd_NotThrow()
+		public void IfTypeEquals_NotEqual_Shd_Not_Throw()
 		{
 			var arg = 0;
 			var other = typeof(string);
@@ -35,7 +35,7 @@
 		//--
 
 		[TestMethod]
-		public void IfTypeNotEquals_AreEqual_Shd_NotThrow()
+		public void IfTypeNotEquals_AreEqual_Shd_Not_Throw()
 		{
 			var arg = 0;
 			var other = typeof(int);

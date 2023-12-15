@@ -4,7 +4,7 @@
 	public class GuardsFileSystemTests
 	{
 		[TestMethod]
-		public void IfDirectoryNotFound_NotNull_Exists_Shd_NotThrow()
+		public void IfDirectoryNotFound_NotNull_Exists_Shd_Not_Throw()
 		{
 			var pth = Directory.GetCurrentDirectory();
 			var exp = pth;
@@ -131,7 +131,7 @@
 		//--
 
 		[TestMethod]
-		public void IfFileNotFound_NotNull_Exists_Shd_NotThrow()
+		public void IfFileNotFound_NotNull_Exists_Shd_Not_Throw()
 		{
 			var pth = Directory.GetCurrentDirectory();
 			var nam = Directory.GetFiles(pth).First();

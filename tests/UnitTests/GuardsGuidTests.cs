@@ -4,7 +4,7 @@
 	public class GuardsGuidTests
 	{
 		[TestMethod]
-		public void IfEmpty_NotEmpty_Shd_NotThrow()
+		public void IfEmpty_NotEmpty_Shd_Not_Throw()
 		{
 			var arg = Guid.NewGuid();
 			var exp = arg;
@@ -74,7 +74,7 @@
 		//--
 
 		[TestMethod]
-		public void IfEmptyWhen_NotEmpty_WhenFalse_Shd_NotThrow()
+		public void IfEmptyWhen_NotEmpty_WhenFalse_Shd_Not_Throw()
 		{
 			var arg = Guid.NewGuid();
 			var con = false;
@@ -88,7 +88,7 @@
 		}
 
 		[TestMethod]
-		public void IfEmptyWhen_NotEmpty_WhenTrue_Shd_NotThrow()
+		public void IfEmptyWhen_NotEmpty_WhenTrue_Shd_Not_Throw()
 		{
 			var arg = Guid.NewGuid();
 			var con = true;
@@ -102,7 +102,7 @@
 		}
 
 		[TestMethod]
-		public void IfEmptyWhen_Empty_WhenFalse_Shd_NotThrow()
+		public void IfEmptyWhen_Empty_WhenFalse_Shd_Not_Throw()
 		{
 			var arg = Guid.Empty;
 			var con = false;
@@ -177,7 +177,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNullOrEmpty_NotNull_NotEmpty_Shd_NotThrow()
+		public void IfNullOrEmpty_NotNull_NotEmpty_Shd_Not_Throw()
 		{
 			var arg = Guid.NewGuid();
 			var exp = arg;
@@ -304,7 +304,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNullOrEmptyWhen_NotNull_WhenFalse_Shd_NotThrow()
+		public void IfNullOrEmptyWhen_NotNull_WhenFalse_Shd_Not_Throw()
 		{
 			Guid? arg = Guid.NewGuid();
 			var con = false;
@@ -318,7 +318,7 @@
 		}
 
 		[TestMethod]
-		public void IfNullOrEmptyWhen_NotNull_WhenTrue_Shd_NotThrow()
+		public void IfNullOrEmptyWhen_NotNull_WhenTrue_Shd_Not_Throw()
 		{
 			Guid? arg = Guid.NewGuid();
 			var con = true;
@@ -332,7 +332,7 @@
 		}
 
 		[TestMethod]
-		public void IfNullOrEmptyWhen_Null_WhenFalse_Shd_NotThrow()
+		public void IfNullOrEmptyWhen_Null_WhenFalse_Shd_Not_Throw()
 		{
 			Guid? arg = null;
 			var con = false;

@@ -4,7 +4,7 @@
 	public class GuardsDateTimeTests
 	{
 		[TestMethod]
-		public void IfDateTimeKindIs_No_Shd_NotThrow()
+		public void IfDateTimeKindIs_No_Shd_Not_Throw()
 		{
 			var arg = DateTime.Now;
 			var kind = DateTimeKind.Utc;
@@ -63,7 +63,7 @@
 		//--
 
 		[TestMethod]
-		public void IfDateTimeKindIsNot_Yes_Shd_NotThrow()
+		public void IfDateTimeKindIsNot_Yes_Shd_Not_Throw()
 		{
 			var arg = DateTime.Now;
 			var kind = arg.Kind;

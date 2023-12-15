@@ -12,7 +12,7 @@ namespace ThrowGuard.UnitTests
 
 
 		[TestMethod]
-		public void IfNotMemberOf_Int_IsMember_Shd_NotThrow()
+		public void IfNotMemberOf_Int_IsMember_Shd_Not_Throw()
 		{
 			var arg = 1;
 			TestEnum ret = TestEnum.None;
@@ -83,7 +83,7 @@ namespace ThrowGuard.UnitTests
 		//--
 
 		[TestMethod]
-		public void IfNotMemberOf_String_IsMember_Shd_NotThrow()
+		public void IfNotMemberOf_String_IsMember_Shd_Not_Throw()
 		{
 			var arg = "one";
 			TestEnum ret = TestEnum.None;

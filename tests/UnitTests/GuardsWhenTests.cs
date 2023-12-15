@@ -4,7 +4,7 @@
 	public class GuardsWhenTests
 	{
 		[TestMethod]
-		public void When_False_Shd_NotThrow()
+		public void When_False_Shd_Not_Throw()
 		{
 			var con = false;
 
@@ -30,7 +30,7 @@
 		//--
 
 		[TestMethod]
-		public void ArgNullWhen_False_Shd_NotThrow()
+		public void ArgNullWhen_False_Shd_Not_Throw()
 		{
 			var con = false;
 
@@ -59,7 +59,7 @@
 		//--
 
 		[TestMethod]
-		public void BadArgWhen_False_Shd_NotThrow()
+		public void BadArgWhen_False_Shd_Not_Throw()
 		{
 			var con = false;
 
@@ -88,7 +88,7 @@
 		//--
 
 		[TestMethod]
-		public void DirectoryNotFoundWhen_False_Shd_NotThrow()
+		public void DirectoryNotFoundWhen_False_Shd_Not_Throw()
 		{
 			var con = false;
 
@@ -131,7 +131,7 @@
 		//--
 
 		[TestMethod]
-		public void FileNotFoundWhen_False_Shd_NotThrow()
+		public void FileNotFoundWhen_False_Shd_Not_Throw()
 		{
 			var con = false;
 
@@ -174,7 +174,7 @@
 		//--
 
 		[TestMethod]
-		public void InvalidCastWhen_False_Shd_NotThrow()
+		public void InvalidCastWhen_False_Shd_Not_Throw()
 		{
 			var con = false;
 
@@ -200,7 +200,7 @@
 		//--
 
 		[TestMethod]
-		public void InvalidOpWhen_False_Shd_NotThrow()
+		public void InvalidOpWhen_False_Shd_Not_Throw()
 		{
 			var con = false;
 
@@ -226,7 +226,7 @@
 		//--
 
 		[TestMethod]
-		public void ValidationErrorWhen_False_Shd_NotThrow()
+		public void ValidationErrorWhen_False_Shd_Not_Throw()
 		{
 			var con = false;
 

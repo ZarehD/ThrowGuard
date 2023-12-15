@@ -4,7 +4,7 @@
 	public class GuardsNumericTests
 	{
 		[TestMethod]
-		public void IfZero_NotZero_Shd_NotThrow()
+		public void IfZero_NotZero_Shd_Not_Throw()
 		{
 			long arg = 123;
 			long exp = arg;
@@ -79,7 +79,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNotZero_Zero_Shd_NotThrow()
+		public void IfNotZero_Zero_Shd_Not_Throw()
 		{
 			long arg = 0;
 			long exp = arg;
@@ -154,7 +154,7 @@
 		//--
 
 		[TestMethod]
-		public void IfPositive_No_Shd_NotThrow()
+		public void IfPositive_No_Shd_Not_Throw()
 		{
 			long arg = 0;
 			long exp = arg;
@@ -229,7 +229,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNotPositive_No_Shd_NotThrow()
+		public void IfNotPositive_No_Shd_Not_Throw()
 		{
 			long arg = 123;
 			long exp = arg;
@@ -304,7 +304,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNegative_No_Shd_NotThrow()
+		public void IfNegative_No_Shd_Not_Throw()
 		{
 			long arg = 0;
 			long exp = arg;
@@ -379,7 +379,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNotNegative_No_Shd_NotThrow()
+		public void IfNotNegative_No_Shd_Not_Throw()
 		{
 			long arg = -123;
 			long exp = arg;
@@ -454,7 +454,7 @@
 		//--
 
 		[TestMethod]
-		public void IfEqualTo_No_Shd_NotThrow()
+		public void IfEqualTo_No_Shd_Not_Throw()
 		{
 			long arg = 123;
 			long oth = 456;
@@ -533,7 +533,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNotEqualTo_No_Shd_NotThrow()
+		public void IfNotEqualTo_No_Shd_Not_Throw()
 		{
 			long arg = 123;
 			long oth = arg;
@@ -612,7 +612,7 @@
 		//--
 
 		[TestMethod]
-		public void IfLessThan_IsGreater_Shd_NotThrow()
+		public void IfLessThan_IsGreater_Shd_Not_Throw()
 		{
 			long arg = 123;
 			long oth = 100;
@@ -627,7 +627,7 @@
 
 
 		[TestMethod]
-		public void IfLessThan_IsSame_Shd_NotThrow()
+		public void IfLessThan_IsSame_Shd_Not_Throw()
 		{
 			long arg = 123;
 			long oth = arg;
@@ -706,7 +706,7 @@
 		//--
 
 		[TestMethod]
-		public void IfLessThanOrEqualTo_IsGreater_Shd_NotThrow()
+		public void IfLessThanOrEqualTo_IsGreater_Shd_Not_Throw()
 		{
 			long arg = 123;
 			long oth = 100;
@@ -848,7 +848,7 @@
 		//--
 
 		[TestMethod]
-		public void IfGreaterThan_IsLess_Shd_NotThrow()
+		public void IfGreaterThan_IsLess_Shd_Not_Throw()
 		{
 			long arg = 123;
 			long oth = 456;
@@ -863,7 +863,7 @@
 
 
 		[TestMethod]
-		public void IfGreaterThan_IsSame_Shd_NotThrow()
+		public void IfGreaterThan_IsSame_Shd_Not_Throw()
 		{
 			long arg = 123;
 			long oth = arg;
@@ -942,7 +942,7 @@
 		//--
 
 		[TestMethod]
-		public void IfGreaterThanOrEqualTo_IsLess_Shd_NotThrow()
+		public void IfGreaterThanOrEqualTo_IsLess_Shd_Not_Throw()
 		{
 			long arg = 123;
 			long oth = 456;
@@ -1084,7 +1084,7 @@
 		//--
 
 		[TestMethod]
-		public void IfBetween_No_Shd_NotThrow()
+		public void IfBetween_No_Shd_Not_Throw()
 		{
 			long arg = 1000;
 			long min = 10;
@@ -1299,7 +1299,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNotBetween_No_Shd_NotThrow()
+		public void IfNotBetween_No_Shd_Not_Throw()
 		{
 			long arg = 100;
 			long min = 10;
@@ -1314,7 +1314,7 @@
 		}
 
 		[TestMethod]
-		public void IfNotBetween_EqualsMin_Shd_NotThrow()
+		public void IfNotBetween_EqualsMin_Shd_Not_Throw()
 		{
 			long arg = 10;
 			long min = 10;
@@ -1329,7 +1329,7 @@
 		}
 
 		[TestMethod]
-		public void IfNotBetween_EqualsMax_Shd_NotThrow()
+		public void IfNotBetween_EqualsMax_Shd_Not_Throw()
 		{
 			long arg = 1000;
 			long min = 10;

@@ -1,10 +1,10 @@
 ﻿namespace ThrowGuard.UnitTests
 {
 	[TestClass]
-	public class GuardsObjectTests
+	public class GuardsNullTests
 	{
 		[TestMethod]
-		public void IfNull_NullInt_HasVal_Shd_NotThrow()
+		public void IfNull_NullInt_HasVal_Shd_Not_Throw()
 		{
 			int? arg = 5;
 			int? ret = null;
@@ -76,7 +76,7 @@
 
 
 		[TestMethod]
-		public void IfNull_String_HasVal_Shd_NotThrow()
+		public void IfNull_String_HasVal_Shd_Not_Throw()
 		{
 			string? arg = "test";
 			string? ret = null;
@@ -148,7 +148,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNull_NullInt_HasVal_WhenFalse_Shd_NotThrow()
+		public void IfNull_NullInt_HasVal_WhenFalse_Shd_Not_Throw()
 		{
 			int? arg = 5;
 			int? ret = null;
@@ -161,7 +161,7 @@
 		}
 
 		[TestMethod]
-		public void IfNull_NullInt_HasVal_WhenTrue_Shd_NotThrow()
+		public void IfNull_NullInt_HasVal_WhenTrue_Shd_Not_Throw()
 		{
 			int? arg = 5;
 			int? ret = null;
@@ -174,7 +174,7 @@
 		}
 
 		[TestMethod]
-		public void IfNull_NullInt_IfNull_WhenFalse_Shd_NotThrow()
+		public void IfNull_NullInt_IfNull_WhenFalse_Shd_Not_Throw()
 		{
 			int? arg = null;
 			int? ret = null;
@@ -248,7 +248,7 @@
 
 
 		[TestMethod]
-		public void IfNull_String_HasVal_WhenFalse_Shd_NotThrow()
+		public void IfNull_String_HasVal_WhenFalse_Shd_Not_Throw()
 		{
 			string? arg = "test";
 			string? ret = null;
@@ -261,7 +261,7 @@
 		}
 
 		[TestMethod]
-		public void IfNull_String_HasVal_WhenTrue_Shd_NotThrow()
+		public void IfNull_String_HasVal_WhenTrue_Shd_Not_Throw()
 		{
 			string? arg = "test";
 			string? ret = null;
@@ -274,7 +274,7 @@
 		}
 
 		[TestMethod]
-		public void IfNull_String_IfNull_WhenFalse_Shd_NotThrow()
+		public void IfNull_String_IfNull_WhenFalse_Shd_Not_Throw()
 		{
 			string? arg = null;
 			string? ret = null;
@@ -345,5 +345,101 @@
 
 			Assert.IsNull(ret);
 		}
+
+		//--
+
+		[TestMethod]
+		public void InvalidOpIfNull_NullInt_HasVal_Shd_Not_Throw()
+		{
+			int? arg = 5;
+			int? ret = null;
+
+			var action = () => ret = Throw.InvalidOpIfNull(arg);
+
+			action.Should().NotThrow();
+			Assert.AreEqual(arg, ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNull_NullInt_Null_Shd_Throw_w_CustMsg()
+		{
+			int? arg = null;
+			int? ret = null;
+			var msg = "Null ref error.";
+
+			var action = () => ret = Throw.InvalidOpIfNull(arg, msg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.IsNull(ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNull_NullInt_Null_Shd_Throw_w_DefMsg()
+		{
+			int? arg = null;
+			int? ret = null;
+			var msg = SR.Err_InvalidOp_NullArg.SF(nameof(arg));
+
+			var action = () => ret = Throw.InvalidOpIfNull(arg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.IsNull(ret);
+		}
+
+
+		[TestMethod]
+		public void InvalidOpIfNull_String_HasVal_Shd_Not_Throw()
+		{
+			string? arg = "test";
+			string? ret = null;
+
+			var action = () => ret = Throw.InvalidOpIfNull(arg);
+
+			action.Should().NotThrow();
+			Assert.AreEqual(ret, arg, true);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNull_String_Null_Shd_Throw_w_CustMsg()
+		{
+			string? arg = null;
+			string? ret = null;
+			var msg = "Null ref error.";
+
+			var action = () => ret = Throw.InvalidOpIfNull(arg, msg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.IsNull(ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNull_String_Null_Shd_Throw_w_DefMsg()
+		{
+			string? arg = null;
+			string? ret = null;
+			var msg = SR.Err_InvalidOp_NullArg.SF(nameof(arg));
+
+			var action = () => ret = Throw.InvalidOpIfNull(arg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.IsNull(ret);
+		}
+
 	}
 }

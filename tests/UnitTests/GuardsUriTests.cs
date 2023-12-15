@@ -4,7 +4,7 @@
 	public class GuardsUriTests
 	{
 		[TestMethod]
-		public void IfAbsolute_No_Shd_NotThrow()
+		public void IfAbsolute_No_Shd_Not_Throw()
 		{
 			var arg = new Uri("test", UriKind.Relative);
 			var exp = arg;
@@ -78,7 +78,7 @@
 		//--
 
 		[TestMethod]
-		public void IfRelative_No_Shd_NotThrow()
+		public void IfRelative_No_Shd_Not_Throw()
 		{
 			var arg = new Uri("//test", UriKind.Absolute);
 			var exp = arg;
@@ -152,7 +152,7 @@
 		//--
 
 		[TestMethod]
-		public void IfSchemeIs_No_Shd_NotThrow()
+		public void IfSchemeIs_No_Shd_Not_Throw()
 		{
 			var sch = UriScheme.Http;
 			var arg = new Uri("ftp://test");
@@ -230,7 +230,7 @@
 		//--
 
 		[TestMethod]
-		public void IfSchemeIsNot_No_Shd_NotThrow()
+		public void IfSchemeIsNot_No_Shd_Not_Throw()
 		{
 			var sch = UriScheme.Http;
 			var arg = new Uri($"{sch}://test/path");
@@ -308,7 +308,7 @@
 		//--
 
 		[TestMethod]
-		public void IfPortIs_No_Shd_NotThrow()
+		public void IfPortIs_No_Shd_Not_Throw()
 		{
 			var prt = 8080;
 			var arg = new Uri("ftp://test:1234");
@@ -386,7 +386,7 @@
 		//--
 
 		[TestMethod]
-		public void IfPortIsNot_No_Shd_NotThrow()
+		public void IfPortIsNot_No_Shd_Not_Throw()
 		{
 			var prt = 8080;
 			var arg = new Uri($"http://test:{prt}/path");
@@ -464,7 +464,7 @@
 		//--
 
 		[TestMethod]
-		public void IfPortIsDefault_No_Shd_NotThrow()
+		public void IfPortIsDefault_No_Shd_Not_Throw()
 		{
 			var arg = new Uri("http://test:1234");
 			var exp = arg;
@@ -538,7 +538,7 @@
 		//--
 
 		[TestMethod]
-		public void IfPortIsNotDefault_No_Shd_NotThrow()
+		public void IfPortIsNotDefault_No_Shd_Not_Throw()
 		{
 			var arg = new Uri($"http://test/path");
 			var exp = arg;
@@ -612,7 +612,7 @@
 		//--
 
 		[TestMethod]
-		public void IfHostIs_No_Shd_NotThrow()
+		public void IfHostIs_No_Shd_Not_Throw()
 		{
 			var hst = "test";
 			var arg = new Uri("ftp://host");
@@ -690,7 +690,7 @@
 		//--
 
 		[TestMethod]
-		public void IfHostIsNot_No_Shd_NotThrow()
+		public void IfHostIsNot_No_Shd_Not_Throw()
 		{
 			var hst = "test";
 			var arg = new Uri($"ftp://{hst}");
@@ -768,7 +768,7 @@
 		//--
 
 		[TestMethod]
-		public void IfHostNameTypeIs_No_Shd_NotThrow()
+		public void IfHostNameTypeIs_No_Shd_Not_Throw()
 		{
 			var hnt = UriHostNameType.Unknown;
 			var arg = new Uri("ftp://host-name");
@@ -846,7 +846,7 @@
 		//--
 
 		[TestMethod]
-		public void IfHostNameTypeIsNot_No_Shd_NotThrow()
+		public void IfHostNameTypeIsNot_No_Shd_Not_Throw()
 		{
 			var hnt = UriHostNameType.Dns;
 			var arg = new Uri($"ftp://host-name.dom");
@@ -924,7 +924,7 @@
 		//--
 
 		[TestMethod]
-		public void IfBaseOf_No_Shd_NotThrow()
+		public void IfBaseOf_No_Shd_Not_Throw()
 		{
 			var arg = new Uri("ftp://host-name");
 			var uri = new Uri("//host/path");
@@ -1002,7 +1002,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNotBaseOf_No_Shd_NotThrow()
+		public void IfNotBaseOf_No_Shd_Not_Throw()
 		{
 			var arg = new Uri("ftp://host-name");
 			var uri = new Uri($"{arg}/path");
@@ -1080,7 +1080,7 @@
 		//--
 
 		[TestMethod]
-		public void IfFile_No_Shd_NotThrow()
+		public void IfFile_No_Shd_Not_Throw()
 		{
 			var arg = new Uri("http://test");
 			var exp = arg;
@@ -1154,7 +1154,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNotFile_No_Shd_NotThrow()
+		public void IfNotFile_No_Shd_Not_Throw()
 		{
 			var arg = new Uri($"file://test/path");
 			var exp = arg;
@@ -1228,7 +1228,7 @@
 		//--
 
 		[TestMethod]
-		public void IfUnc_No_Shd_NotThrow()
+		public void IfUnc_No_Shd_Not_Throw()
 		{
 			var arg = new Uri("http://test");
 			var exp = arg;
@@ -1302,7 +1302,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNotUnc_No_Shd_NotThrow()
+		public void IfNotUnc_No_Shd_Not_Throw()
 		{
 			var arg = new Uri($"//test/path");
 			var exp = arg;
@@ -1376,7 +1376,7 @@
 		//--
 
 		[TestMethod]
-		public void IfLoopback_No_Shd_NotThrow()
+		public void IfLoopback_No_Shd_Not_Throw()
 		{
 			var arg = new Uri("http://host.dom/path");
 			var exp = arg;
@@ -1571,7 +1571,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNotLoopback_No_Dns_Shd_NotThrow()
+		public void IfNotLoopback_No_Dns_Shd_Not_Throw()
 		{
 			var arg = new Uri("http://localhost");
 			var exp = arg;
@@ -1584,7 +1584,7 @@
 		}
 
 		[TestMethod]
-		public void IfNotLoopback_No_IP4_Shd_NotThrow()
+		public void IfNotLoopback_No_IP4_Shd_Not_Throw()
 		{
 			var arg = new Uri("http://127.0.0.1");
 			var exp = arg;
@@ -1597,7 +1597,7 @@
 		}
 
 		[TestMethod]
-		public void IfNotLoopback_No_IP6_Shd_NotThrow()
+		public void IfNotLoopback_No_IP6_Shd_Not_Throw()
 		{
 			var arg = new Uri("http://[::1]");
 			var exp = arg;

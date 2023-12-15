@@ -198,6 +198,10 @@
   <data name="Err_InvalidOp" xml:space="preserve">
     <value>The operation is not valid.</value>
   </data>
+  <data name="Err_InvalidOp_NullArg" xml:space="preserve">
+    <value>Invalid Operation: argument contains a null reference (Parameter: {0}).</value>
+    <comment>0: value</comment>
+  </data>
   <data name="Err_NotImplemented" xml:space="preserve">
     <value>Not implemented.</value>
   </data>

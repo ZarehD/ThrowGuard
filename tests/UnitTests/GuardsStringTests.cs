@@ -4,7 +4,7 @@
 	public class GuardsStringTests
 	{
 		[TestMethod]
-		public void IfNullOrEmpty_HasVal_Shd_NotThrow()
+		public void IfNullOrEmpty_HasVal_Shd_Not_Throw()
 		{
 			string? arg = "test";
 			string? exp = arg;
@@ -139,7 +139,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNullOrEmpty_HasVal_WhenFalse_Shd_NotThrow()
+		public void IfNullOrEmpty_HasVal_WhenFalse_Shd_Not_Throw()
 		{
 			string? arg = "test";
 			string? exp = arg;
@@ -153,7 +153,7 @@
 		}
 
 		[TestMethod]
-		public void IfNullOrEmpty_HasVal_WhenTrue_Shd_NotThrow()
+		public void IfNullOrEmpty_HasVal_WhenTrue_Shd_Not_Throw()
 		{
 			string? arg = "test";
 			string? exp = arg;
@@ -168,7 +168,7 @@
 
 
 		[TestMethod]
-		public void IfNullOrEmpty_IsEmpty_WhenFalse_Shd_NotThrow()
+		public void IfNullOrEmpty_IsEmpty_WhenFalse_Shd_Not_Throw()
 		{
 			string? arg = string.Empty;
 			string? exp = arg;
@@ -245,7 +245,7 @@
 
 
 		[TestMethod]
-		public void IfNullOrEmpty_IsNull_WhenFalse_Shd_NotThrow()
+		public void IfNullOrEmpty_IsNull_WhenFalse_Shd_Not_Throw()
 		{
 			string? arg = null;
 			string? exp = arg;
@@ -324,7 +324,7 @@
 		//----
 
 		[TestMethod]
-		public void IfNullOrWhitespace_HasVal_Shd_NotThrow()
+		public void IfNullOrWhitespace_HasVal_Shd_Not_Throw()
 		{
 			string? arg = "test";
 			string? exp = arg;
@@ -519,7 +519,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNullOrWhitespace_HasVal_WhenFalse_Shd_NotThrow()
+		public void IfNullOrWhitespace_HasVal_WhenFalse_Shd_Not_Throw()
 		{
 			string? arg = "test";
 			string? exp = arg;
@@ -533,7 +533,7 @@
 		}
 
 		[TestMethod]
-		public void IfNullOrWhitespace_HasVal_WhenTrue_Shd_NotThrow()
+		public void IfNullOrWhitespace_HasVal_WhenTrue_Shd_Not_Throw()
 		{
 			string? arg = "test";
 			string? exp = arg;
@@ -548,7 +548,7 @@
 
 
 		[TestMethod]
-		public void IfNullOrWhitespace_IsSpace_WhenFalse_Shd_NotThrow()
+		public void IfNullOrWhitespace_IsSpace_WhenFalse_Shd_Not_Throw()
 		{
 			string? arg = "  ";
 			string? exp = arg;
@@ -625,7 +625,7 @@
 
 
 		[TestMethod]
-		public void IfNullOrWhitespace_IsEmpty_WhenFalse_Shd_NotThrow()
+		public void IfNullOrWhitespace_IsEmpty_WhenFalse_Shd_Not_Throw()
 		{
 			string? arg = string.Empty;
 			string? exp = arg;
@@ -702,7 +702,7 @@
 
 
 		[TestMethod]
-		public void IfNullOrWhitespace_IsNull_WhenFalse_Shd_NotThrow()
+		public void IfNullOrWhitespace_IsNull_WhenFalse_Shd_Not_Throw()
 		{
 			string? arg = null;
 			string? exp = arg;
@@ -781,7 +781,7 @@
 		//----
 
 		[TestMethod]
-		public void IfNullOrWhitespace_Char_HasVal_Shd_NotThrow()
+		public void IfNullOrWhitespace_Char_HasVal_Shd_Not_Throw()
 		{
 			char arg = 't';
 			char exp = arg;
@@ -976,7 +976,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNullOrWhitespace_Char_HasVal_WhenFalse_Shd_NotThrow()
+		public void IfNullOrWhitespace_Char_HasVal_WhenFalse_Shd_Not_Throw()
 		{
 			char? arg = 't';
 			char? exp = arg;
@@ -990,7 +990,7 @@
 		}
 
 		[TestMethod]
-		public void IfNullOrWhitespace_Char_HasVal_WhenTrue_Shd_NotThrow()
+		public void IfNullOrWhitespace_Char_HasVal_WhenTrue_Shd_Not_Throw()
 		{
 			char? arg = 't';
 			char? exp = arg;
@@ -1005,7 +1005,7 @@
 
 
 		[TestMethod]
-		public void IfNullOrWhitespace_Char_IsNull_WhenFalse_Shd_NotThrow()
+		public void IfNullOrWhitespace_Char_IsNull_WhenFalse_Shd_Not_Throw()
 		{
 			char? arg = null;
 			char? exp = null;
@@ -1082,7 +1082,7 @@
 
 
 		[TestMethod]
-		public void IfNullOrWhitespace_Char_IsSpace_WhenFalse_Shd_NotThrow()
+		public void IfNullOrWhitespace_Char_IsSpace_WhenFalse_Shd_Not_Throw()
 		{
 			char? arg = ' ';
 			char? exp = arg;
@@ -1159,7 +1159,7 @@
 
 
 		[TestMethod]
-		public void IfNullOrWhitespace_Char_IsTab_WhenFalse_Shd_NotThrow()
+		public void IfNullOrWhitespace_Char_IsTab_WhenFalse_Shd_Not_Throw()
 		{
 			char? arg = '\t';
 			char? exp = arg;

@@ -4,7 +4,7 @@
 	public class GuardsCollectionTests
 	{
 		[TestMethod]
-		public void IfNullOrEmpty_No_Shd_NotThrow()
+		public void IfNullOrEmpty_No_Shd_Not_Throw()
 		{
 			var arg = new List<int>() { 1, 2, 3 };
 			var exp = arg;
@@ -140,7 +140,7 @@
 		//--
 
 		[TestMethod]
-		public void IfNullOrEmpty_No_WhenFalse_Shd_NotThrow()
+		public void IfNullOrEmpty_No_WhenFalse_Shd_Not_Throw()
 		{
 			var arg = new List<int>() { 1, 2, 3 };
 			var exp = arg;
@@ -154,7 +154,7 @@
 		}
 
 		[TestMethod]
-		public void IfNullOrEmpty_No_WhenTrue_Shd_NotThrow()
+		public void IfNullOrEmpty_No_WhenTrue_Shd_Not_Throw()
 		{
 			var arg = new List<int>() { 1, 2, 3 };
 			var exp = arg;
@@ -169,7 +169,7 @@
 
 
 		[TestMethod]
-		public void IfNullOrEmpty_Null_WhenFalse_Shd_NotThrow()
+		public void IfNullOrEmpty_Null_WhenFalse_Shd_Not_Throw()
 		{
 			var arg = default(IEnumerable<int>?);
 			var exp = default(IEnumerable<int>?);
@@ -246,7 +246,7 @@
 
 
 		[TestMethod]
-		public void IfNullOrEmpty_Empty_WhenFalse_Shd_NotThrow()
+		public void IfNullOrEmpty_Empty_WhenFalse_Shd_Not_Throw()
 		{
 			var arg = new List<int>();
 			var exp = arg;
@@ -337,7 +337,7 @@
 		}
 
 		[TestMethod]
-		public void IfCountLessThan_IsMore_Shd_NotThrow()
+		public void IfCountLessThan_IsMore_Shd_Not_Throw()
 		{
 			var arg = new List<byte> { 1, 2, 3 };
 			var exp = arg;
@@ -351,7 +351,7 @@
 		}
 
 		[TestMethod]
-		public void IfCountLessThan_IsSame_Shd_NotThrow()
+		public void IfCountLessThan_IsSame_Shd_Not_Throw()
 		{
 			var arg = new List<byte> { 1, 2, 3 };
 			var exp = arg;
@@ -442,7 +442,7 @@
 		}
 
 		[TestMethod]
-		public void IfCountLessThanOrEqualTo_IsMore_Shd_NotThrow()
+		public void IfCountLessThanOrEqualTo_IsMore_Shd_Not_Throw()
 		{
 			var arg = new List<byte> { 1, 2, 3 };
 			var exp = arg;
@@ -598,7 +598,7 @@
 		}
 
 		[TestMethod]
-		public void IfCountMoreThan_IsLess_Shd_NotThrow()
+		public void IfCountMoreThan_IsLess_Shd_Not_Throw()
 		{
 			var arg = new List<byte> { 1, 2, 3 };
 			var exp = arg;
@@ -612,7 +612,7 @@
 		}
 
 		[TestMethod]
-		public void IfCountMoreThan_IsSame_Shd_NotThrow()
+		public void IfCountMoreThan_IsSame_Shd_Not_Throw()
 		{
 			var arg = new List<byte> { 1, 2, 3 };
 			var exp = arg;
@@ -703,7 +703,7 @@
 		}
 
 		[TestMethod]
-		public void IfCountMoreThanOrEqualTo_IsLess_Shd_NotThrow()
+		public void IfCountMoreThanOrEqualTo_IsLess_Shd_Not_Throw()
 		{
 			var arg = new List<byte> { 1, 2, 3 };
 			var exp = arg;
@@ -858,7 +858,7 @@
 		}
 
 		[TestMethod]
-		public void IfCountIs_No_Shd_NotThrow()
+		public void IfCountIs_No_Shd_Not_Throw()
 		{
 			var arg = new List<byte> { 1, 2, 3 };
 			var exp = arg;
@@ -949,7 +949,7 @@
 		}
 
 		[TestMethod]
-		public void IfCountIsNot_No_Shd_NotThrow()
+		public void IfCountIsNot_No_Shd_Not_Throw()
 		{
 			var arg = new List<byte> { 1, 2, 3 };
 			var exp = arg;
@@ -1046,7 +1046,7 @@
 		}
 
 		[TestMethod]
-		public void IfAnyElement_No_Shd_NotThrow()
+		public void IfAnyElement_No_Shd_Not_Throw()
 		{
 			var arg = new List<byte>() { 1, 2, 3 };
 			var exp = arg;
@@ -1133,7 +1133,7 @@
 		}
 
 		[TestMethod]
-		public void IfAnyElementNot_No_Shd_NotThrow()
+		public void IfAnyElementNot_No_Shd_Not_Throw()
 		{
 			var arg = new List<byte>() { 1, 2, 3 };
 			var exp = arg;
@@ -1220,7 +1220,7 @@
 		}
 
 		[TestMethod]
-		public void IfAnyElementNullOrEmpty_No_Shd_NotThrow()
+		public void IfAnyElementNullOrEmpty_No_Shd_Not_Throw()
 		{
 			var arg = new List<string>() { "one", "two" };
 			var exp = arg;
@@ -1368,7 +1368,7 @@
 		}
 
 		[TestMethod]
-		public void IfAnyElementNullOrWhitespace_No_Shd_NotThrow()
+		public void IfAnyElementNullOrWhitespace_No_Shd_Not_Throw()
 		{
 			var arg = new List<string?>() { "one", "two" };
 			var exp = arg;
