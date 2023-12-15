@@ -116,7 +116,7 @@ namespace ThrowGuard
 			if (arg is null)
 			{
 				InvalidOp(
-					msg ?? SR.Err_InvalidOp_NullArg.SF(argName ?? SR.Msg_NoArgName));
+					msg ?? SR.Err_InvalidOp_Null.SF(argName ?? SR.Msg_NoArgName));
 			}
 			return arg;
 		}

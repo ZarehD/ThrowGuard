@@ -277,11 +277,38 @@ namespace ThrowGuard.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid Operation: argument contains a null reference (Parameter: {0})..
+        ///   Looks up a localized string similar to Invalid Operation: object is null (Parameter: {0})..
         /// </summary>
-        internal static string Err_InvalidOp_NullArg {
+        internal static string Err_InvalidOp_Null {
             get {
-                return ResourceManager.GetString("Err_InvalidOp_NullArg", resourceCulture);
+                return ResourceManager.GetString("Err_InvalidOp_Null", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Operation: string value null or empty (Parameter: {0})..
+        /// </summary>
+        internal static string Err_InvalidOp_NullOrEmpty {
+            get {
+                return ResourceManager.GetString("Err_InvalidOp_NullOrEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Operation: string value null, empty, or whitespace (Parameter: {0})..
+        /// </summary>
+        internal static string Err_InvalidOp_NullOrWhitespace {
+            get {
+                return ResourceManager.GetString("Err_InvalidOp_NullOrWhitespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Operation: character value is null or whitespace (Parameter: {0})..
+        /// </summary>
+        internal static string Err_InvalidOp_NullOrWhitespace_Char {
+            get {
+                return ResourceManager.GetString("Err_InvalidOp_NullOrWhitespace_Char", resourceCulture);
             }
         }
         

@@ -320,8 +320,7 @@
 			Assert.AreEqual(exp, ret);
 		}
 
-		//----
-		//----
+		//---- ----
 
 		[TestMethod]
 		public void IfNullOrWhitespace_HasVal_Shd_Not_Throw()
@@ -777,8 +776,7 @@
 			Assert.AreEqual(exp, ret);
 		}
 
-		//----
-		//----
+		//---- ----
 
 		[TestMethod]
 		public void IfNullOrWhitespace_Char_HasVal_Shd_Not_Throw()
@@ -1233,5 +1231,347 @@
 
 			Assert.AreEqual(exp, ret);
 		}
+
+		//---- ----
+
+		[TestMethod]
+		public void InvalidOpIfNullOrEmpty_HasVal_Shd_Not_Throw()
+		{
+			string? arg = "test";
+			string? exp = arg;
+			string? ret = null;
+
+			var action = () => ret = Throw.InvalidOpIfNullOrEmpty(arg);
+
+			action.Should().NotThrow();
+			Assert.AreEqual(exp, ret);
+		}
+
+
+		[TestMethod]
+		public void InvalidOpIfNullOrEmpty_IsEmpty_Shd_Throw_w_CustMsg()
+		{
+			string? arg = string.Empty;
+			string? exp = null;
+			string? ret = null;
+			var msg = "Null or empty error.";
+
+			var action = () => ret = Throw.InvalidOpIfNullOrEmpty(arg, msg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNullOrEmpty_IsEmpty_Shd_Throw_w_DefMsg()
+		{
+			string? arg = string.Empty;
+			string? exp = null;
+			string? ret = null;
+			var msg = SR.Err_InvalidOp_NullOrEmpty.SF(nameof(arg));
+
+			var action = () => ret = Throw.InvalidOpIfNullOrEmpty(arg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+
+		[TestMethod]
+		public void InvalidOpIfNullOrEmpty_IsNull_Shd_Throw_w_CustMsg()
+		{
+			string? arg = null;
+			string? exp = null;
+			string? ret = null;
+			var msg = "Null or empty error.";
+
+			var action = () => ret = Throw.InvalidOpIfNullOrEmpty(arg, msg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNullOrEmpty_IsNull_Shd_Throw_w_DefMsg()
+		{
+			string? arg = null;
+			string? exp = null;
+			string? ret = null;
+			var msg = SR.Err_InvalidOp_NullOrEmpty.SF(nameof(arg));
+
+			var action = () => ret = Throw.InvalidOpIfNullOrEmpty(arg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+		//--
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_HasVal_Shd_Not_Throw()
+		{
+			string? arg = "test";
+			string? exp = arg;
+			string? ret = null;
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg);
+
+			action.Should().NotThrow();
+			Assert.AreEqual(exp, ret);
+		}
+
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_IsWhitespace_Shd_Throw_w_CustMsg()
+		{
+			string? arg = string.Empty;
+			string? exp = null;
+			string? ret = null;
+			var msg = "Null or empty error.";
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg, msg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_IsWhitespace_Shd_Throw_w_DefMsg()
+		{
+			string? arg = string.Empty;
+			string? exp = null;
+			string? ret = null;
+			var msg = SR.Err_InvalidOp_NullOrWhitespace.SF(nameof(arg));
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_IsEmpty_Shd_Throw_w_CustMsg()
+		{
+			string? arg = string.Empty;
+			string? exp = null;
+			string? ret = null;
+			var msg = "Null or empty error.";
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg, msg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_IsEmpty_Shd_Throw_w_DefMsg()
+		{
+			string? arg = string.Empty;
+			string? exp = null;
+			string? ret = null;
+			var msg = SR.Err_InvalidOp_NullOrWhitespace.SF(nameof(arg));
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_IsNull_Shd_Throw_w_CustMsg()
+		{
+			string? arg = null;
+			string? exp = null;
+			string? ret = null;
+			var msg = "Null or empty error.";
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg, msg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_IsNull_Shd_Throw_w_DefMsg()
+		{
+			string? arg = null;
+			string? exp = null;
+			string? ret = null;
+			var msg = SR.Err_InvalidOp_NullOrWhitespace.SF(nameof(arg));
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+		//---- ----
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_Char_HasVal_Shd_Not_Throw()
+		{
+			char arg = 't';
+			char exp = arg;
+			char ret = 'x';
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg);
+
+			action.Should().NotThrow();
+			Assert.AreEqual(exp, ret);
+		}
+
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_Char_IsNull_Shd_Throw_w_CustMsg()
+		{
+			char? arg = null;
+			char? exp = null;
+			char? ret = null;
+			var msg = "Whitepace char error.";
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg, msg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_Char_IsNull_Shd_Throw_w_DefMsg()
+		{
+			char? arg = null;
+			char? exp = null;
+			char? ret = null;
+			var msg = SR.Err_InvalidOp_NullOrWhitespace_Char.SF(nameof(arg));
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_Char_IsSpace_Shd_Throw_w_CustMsg()
+		{
+			char? arg = ' ';
+			char? exp = null;
+			char? ret = null;
+			var msg = "Whitepace char error.";
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg, msg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_Char_IsSpace_Shd_Throw_w_DefMsg()
+		{
+			char? arg = ' ';
+			char? exp = null;
+			char? ret = null;
+			var msg = SR.Err_InvalidOp_NullOrWhitespace_Char.SF(nameof(arg));
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_Char_IsTab_Shd_Throw_w_CustMsg()
+		{
+			char? arg = '\t';
+			char? exp = null;
+			char? ret = null;
+			var msg = "Whitepace char error.";
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg, msg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
+		[TestMethod]
+		public void InvalidOpIfNullOrWhitespace_Char_IsTab_Shd_Throw_w_DefMsg()
+		{
+			char? arg = '\t';
+			char? exp = null;
+			char? ret = null;
+			var msg = SR.Err_InvalidOp_NullOrWhitespace_Char.SF(nameof(arg));
+
+			var action = () => ret = Throw.InvalidOpIfNullOrWhitespace(arg);
+
+			action.Should()
+				.ThrowExactly<InvalidOperationException>()
+				.WithMessage($"{msg}*")
+				;
+
+			Assert.AreEqual(exp, ret);
+		}
+
 	}
 }

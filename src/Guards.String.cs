@@ -14,6 +14,8 @@ namespace ThrowGuard
 {
 	public static partial class Throw
 	{
+		// String
+
 		/// <summary>
 		///		Throws an exception if <paramref name="arg"/> is null or empty.
 		/// </summary>
@@ -90,7 +92,6 @@ namespace ThrowGuard
 			}
 			return arg;
 		}
-
 
 
 		/// <summary>
@@ -251,5 +252,83 @@ namespace ThrowGuard
 			}
 			return arg;
 		}
+
+
+
+		// InvalidOp - String
+
+		/// <summary>
+		///		Throws an <see cref="InvalidOperationException"/> exception 
+		///		if <paramref name="arg"/> is null or empty.
+		/// </summary>
+		/// <param name="arg">The value or expression to evaluate.</param>
+		/// <param name="msg">The message to use for the exception.</param>
+		/// <param name="argName">The name of the evaluated expression in <paramref name="arg"/>.</param>
+		/// <returns>The value specified in <paramref name="arg"/>.</returns>
+		/// <exception cref="InvalidOperationException"></exception>
+		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static string InvalidOpIfNullOrEmpty(
+			[NotNull] string? arg, string? msg = default,
+			[CallerArgumentExpression(nameof(arg))] string? argName = default)
+		{
+			if (string.IsNullOrEmpty(arg))
+			{
+				InvalidOp(
+					msg ?? SR.Err_InvalidOp_NullOrEmpty.SF(
+						argName ?? SR.Msg_NoArgName));
+			}
+			return arg;
+		}
+
+
+		/// <summary>
+		///		Throws an <see cref="InvalidOperationException"/> exception 
+		///		if <paramref name="arg"/> is null, empty, or whitespace.
+		/// </summary>
+		/// <param name="arg">The value or expression to evaluate.</param>
+		/// <param name="msg">The message to use for the exception.</param>
+		/// <param name="argName">The name of the evaluated expression in <paramref name="arg"/>.</param>
+		/// <returns>The value specified in <paramref name="arg"/>.</returns>
+		/// <exception cref="InvalidOperationException"></exception>
+		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static string InvalidOpIfNullOrWhitespace(
+			[NotNull] string? arg, string? msg = default,
+			[CallerArgumentExpression(nameof(arg))] string? argName = default)
+		{
+			if (string.IsNullOrWhiteSpace(arg))
+			{
+				InvalidOp(
+					msg ?? SR.Err_InvalidOp_NullOrWhitespace.SF(
+						argName ?? SR.Msg_NoArgName));
+			}
+			return arg;
+		}
+
+
+		// InvalidOp - char
+
+		/// <summary>
+		///		Throws an <see cref="InvalidOperationException"/> exception 
+		///		if <paramref name="arg"/> is null or whitespace.
+		/// </summary>
+		/// <param name="arg">The value or expression to evaluate.</param>
+		/// <param name="msg">The message to use for the exception.</param>
+		/// <param name="argName">The name of the evaluated expression in <paramref name="arg"/>.</param>
+		/// <returns>The value specified in <paramref name="arg"/>.</returns>
+		/// <exception cref="InvalidOperationException"></exception>
+		[Pure, MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static char InvalidOpIfNullOrWhitespace(
+			[NotNull] char? arg, string? msg = default,
+			[CallerArgumentExpression(nameof(arg))] string? argName = default)
+		{
+			if ((arg is null) || (' ' == arg) || ('\t' == arg))
+			{
+				InvalidOp(
+					msg ?? SR.Err_InvalidOp_NullOrWhitespace_Char.SF(
+						argName ?? SR.Msg_NoArgName));
+			}
+			return arg.Value;
+		}
+
 	}
 }

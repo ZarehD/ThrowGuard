@@ -346,7 +346,7 @@
 			Assert.IsNull(ret);
 		}
 
-		//--
+		//---- ----
 
 		[TestMethod]
 		public void InvalidOpIfNull_NullInt_HasVal_Shd_Not_Throw()
@@ -382,7 +382,7 @@
 		{
 			int? arg = null;
 			int? ret = null;
-			var msg = SR.Err_InvalidOp_NullArg.SF(nameof(arg));
+			var msg = SR.Err_InvalidOp_Null.SF(nameof(arg));
 
 			var action = () => ret = Throw.InvalidOpIfNull(arg);
 
@@ -394,6 +394,7 @@
 			Assert.IsNull(ret);
 		}
 
+		//--
 
 		[TestMethod]
 		public void InvalidOpIfNull_String_HasVal_Shd_Not_Throw()
@@ -429,7 +430,7 @@
 		{
 			string? arg = null;
 			string? ret = null;
-			var msg = SR.Err_InvalidOp_NullArg.SF(nameof(arg));
+			var msg = SR.Err_InvalidOp_Null.SF(nameof(arg));
 
 			var action = () => ret = Throw.InvalidOpIfNull(arg);
 
