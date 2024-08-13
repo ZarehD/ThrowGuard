@@ -304,6 +304,33 @@
 
 
 		[TestMethod]
+		public void Throws_NotSupportedn_w_CustMsg()
+		{
+			var msg = "Not supported error.";
+
+			var action = () => Throw.NotSupported(msg);
+
+			action.Should()
+				.ThrowExactly<NotSupportedException>()
+				.WithMessage(msg)
+				;
+		}
+
+		[TestMethod]
+		public void Throws_NotSupported_w_DefMsg()
+		{
+			var msg = SR.Err_NotSupported;
+
+			var action = () => Throw.NotSupported();
+
+			action.Should()
+				.ThrowExactly<NotSupportedException>()
+				.WithMessage(msg)
+				;
+		}
+
+
+		[TestMethod]
 		public void Throws_NullArg_w_CustMsg()
 		{
 			var msg = "Arg null error";

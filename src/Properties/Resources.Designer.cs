@@ -322,6 +322,15 @@ namespace ThrowGuard.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not Supported..
+        /// </summary>
+        internal static string Err_NotSupported {
+            get {
+                return ResourceManager.GetString("Err_NotSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The argument contains a null reference..
         /// </summary>
         internal static string Err_NullArg {

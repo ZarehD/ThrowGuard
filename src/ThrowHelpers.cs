@@ -143,6 +143,16 @@ namespace ThrowGuard
 				(message ?? SR.Err_NotImplemented));
 
 		/// <summary>
+		///		Throws an exception of type <see cref="NotSupportedException"/>.
+		/// </summary>
+		/// <param name="message">The exception message.</param>
+		/// <exception cref="NotSupportedException"></exception>
+		[DoesNotReturn]
+		public static void NotSupported(string? message = default) =>
+			throw new NotSupportedException(
+				(message ?? SR.Err_NotSupported));
+
+		/// <summary>
 		///		Throws an exception of type <see cref="ArgumentNullException"/>.
 		/// </summary>
 		/// <param name="argName">The name of the argument.</param>

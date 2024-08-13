@@ -217,6 +217,9 @@
   <data name="Err_NotImplemented" xml:space="preserve">
     <value>Not implemented.</value>
   </data>
+  <data name="Err_NotSupported" xml:space="preserve">
+    <value>Not Supported.</value>
+  </data>
   <data name="Err_NullArg" xml:space="preserve">
     <value>The argument contains a null reference.</value>
   </data>
