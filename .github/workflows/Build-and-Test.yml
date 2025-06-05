@@ -14,14 +14,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Setup .NET
+    - name: Setup .NET 9
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 9.x.x
+    - name: Setup .NET 8
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.x.x
     - name: Restore dependencies
       run: dotnet restore ./ThrowGuard.sln
     - name: Build
       run: dotnet build ./ThrowGuard.sln -c Release --no-restore
     - name: Test
-      run: dotnet test ./ThrowGuard.sln -c Release
-      #run: dotnet test ./ThrowGuard.sln -c Release --no-build --verbosity normal
+      run: dotnet test ./ThrowGuard.sln -c Release --no-build --verbosity normal
