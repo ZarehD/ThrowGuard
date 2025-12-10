@@ -8,6 +8,10 @@ Guard methods simplify and streamline your code, making it cleaner and easier to
 Guard methods use throw helpers internally.
 
 
+:star: If you find this project useful, please give it a star.  :star:
+<br/>
+
+
 ## Getting Started
 
 Add the Nuget package to your project.
@@ -173,4 +177,4 @@ void MyMethod(MyObject myObject, string myString)
 
 <br/>
 
-If you like this project, or find it useful, please give it a star. Thank you.
+:star: If you find this project useful, please give it a star. Thank you.  :star:
